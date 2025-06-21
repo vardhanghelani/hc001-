@@ -104,10 +104,10 @@ const Index = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4"
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6"
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
@@ -115,7 +115,7 @@ const Index = () => {
             <span className="text-romantic bg-white bg-clip-text">Sorry</span>
           </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed px-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
@@ -125,31 +125,32 @@ const Index = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <Card
-              className="card-romantic h-full group cursor-pointer"
+              className="card-romantic h-full group cursor-pointer active:scale-95"
               onClick={() => navigate("/sorry")}
             >
-              <div className="text-center">
+              <div className="text-center p-4 sm:p-6">
                 <motion.div
-                  className="inline-block p-4 bg-rose-100 rounded-full mb-4"
+                  className="inline-block p-3 sm:p-4 bg-rose-100 rounded-full mb-4"
                   whileHover={{ scale: 1.1, rotate: 10 }}
+                  whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Heart className="text-rose-600" size={32} />
+                  <Heart className="text-rose-600" size={28} />
                 </motion.div>
-                <h3 className="text-2xl font-semibold text-romantic mb-4">
+                <h3 className="text-xl sm:text-2xl font-semibold text-romantic mb-3 sm:mb-4">
                   My Apology
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
                   Read my heartfelt messages and see how sorry I truly am
                 </p>
-                <Button className="btn-romantic group-hover:shadow-lg">
+                <Button className="btn-romantic group-hover:shadow-lg w-full sm:w-auto text-sm sm:text-base py-3 sm:py-2">
                   Read Messages <ArrowRight className="ml-2" size={16} />
                 </Button>
               </div>
@@ -162,24 +163,25 @@ const Index = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <Card
-              className="card-romantic h-full group cursor-pointer"
+              className="card-romantic h-full group cursor-pointer active:scale-95"
               onClick={() => navigate("/memories")}
             >
-              <div className="text-center">
+              <div className="text-center p-4 sm:p-6">
                 <motion.div
-                  className="inline-block p-4 bg-peach rounded-full mb-4"
+                  className="inline-block p-3 sm:p-4 bg-peach rounded-full mb-4"
                   whileHover={{ scale: 1.1, rotate: -10 }}
+                  whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Sparkles className="text-orange-600" size={32} />
+                  <Sparkles className="text-orange-600" size={28} />
                 </motion.div>
-                <h3 className="text-2xl font-semibold text-romantic mb-4">
+                <h3 className="text-xl sm:text-2xl font-semibold text-romantic mb-3 sm:mb-4">
                   Our Memories
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
                   A collection of all our beautiful moments together
                 </p>
-                <Button className="btn-romantic group-hover:shadow-lg">
+                <Button className="btn-romantic group-hover:shadow-lg w-full sm:w-auto text-sm sm:text-base py-3 sm:py-2">
                   View Gallery <ArrowRight className="ml-2" size={16} />
                 </Button>
               </div>
@@ -192,24 +194,25 @@ const Index = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <Card
-              className="card-romantic h-full group cursor-pointer"
+              className="card-romantic h-full group cursor-pointer active:scale-95"
               onClick={() => navigate("/promise")}
             >
-              <div className="text-center">
+              <div className="text-center p-4 sm:p-6">
                 <motion.div
-                  className="inline-block p-4 bg-lavender rounded-full mb-4"
+                  className="inline-block p-3 sm:p-4 bg-lavender rounded-full mb-4"
                   whileHover={{ scale: 1.1, rotate: 10 }}
+                  whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Gift className="text-purple-600" size={32} />
+                  <Gift className="text-purple-600" size={28} />
                 </motion.div>
-                <h3 className="text-2xl font-semibold text-romantic mb-4">
+                <h3 className="text-xl sm:text-2xl font-semibold text-romantic mb-3 sm:mb-4">
                   My Promise
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
                   See how I plan to make things better and love you more
                 </p>
-                <Button className="btn-romantic group-hover:shadow-lg">
+                <Button className="btn-romantic group-hover:shadow-lg w-full sm:w-auto text-sm sm:text-base py-3 sm:py-2">
                   My Promises <ArrowRight className="ml-2" size={16} />
                 </Button>
               </div>
@@ -221,15 +224,15 @@ const Index = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="text-center"
+          className="text-center px-4"
         >
           <motion.div
             className="inline-block"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <p className="text-white/80 text-lg mb-4">
-              Click on any card above to start your journey
+            <p className="text-white/80 text-base sm:text-lg mb-4">
+              Tap on any card above to start your journey
             </p>
             <Heart
               className="text-white mx-auto animate-heart-beat"
