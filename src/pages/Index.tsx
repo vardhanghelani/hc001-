@@ -120,7 +120,7 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            My dearest love, I made a mistake and I want to make it right. This
+            My dearest Babliii, I made a mistake and I want to make it right. This
             website is my way of showing you how much you mean to me.
           </motion.p>
         </motion.div>
