@@ -12,15 +12,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 
-// Memory data with your actual photos
-// TO ADD YOUR PHOTOS: Place them in the public/photos/ folder and update the image paths below
+// Memory data with your actual photos and personal messages
 const memories = [
   {
     id: 1,
     title: "Our First Date",
     description:
-      "That magical evening when everything started. I still remember how nervous I was and how your smile made everything perfect.",
-    image: "/photos/first-date.jpg", // Replace with your actual photo
+      "The first unexpected date happened due to other person that will be remembered forever.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/1-d34487?format=webp&width=800",
     date: "The beginning of forever",
     emoji: "💕",
   },
@@ -29,61 +29,68 @@ const memories = [
     title: "Your Beautiful Smile",
     description:
       "This photo captures what I love most about you - your radiant smile that lights up my whole world.",
-    image: "/photos/her-smile.jpg", // Replace with your actual photo
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/2-f4e5a6?format=webp&width=800",
     date: "Every day with you",
     emoji: "😍",
   },
   {
     id: 3,
-    title: "Weekend Adventures",
+    title: "Video call Adventures",
     description:
-      "All those spontaneous trips and adventures we took together. Every moment was an adventure with you by my side.",
-    image: "/photos/weekend-adventure.jpg", // Replace with your actual photo
-    date: "Our favorite weekends",
+      "Video calls have always been special part of our lives and that still continues without them this relationship would never have survived.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/3-0bb148?format=webp&width=800",
+    date: "Our favorite activity",
     emoji: "🌟",
   },
   {
     id: 4,
-    title: "Cozy Evenings",
+    title: "Biggest surprise of my Life",
     description:
-      "Those quiet nights together, watching movies, talking about everything and nothing. The simple moments that mean the most.",
-    image: "/photos/cozy-evening.jpg", // Replace with your actual photo
-    date: "Home is wherever you are",
-    emoji: "🏠",
+      "The day that still my heart couldn't digest the bestesttttt surprise of my life and golden period of our lives.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/8-61b445?format=webp&width=800",
+    date: "bestest surprise",
+    emoji: "😍",
   },
   {
     id: 5,
     title: "Your Laugh",
     description:
       "I love making you laugh. Your joy is infectious and it's one of my favorite sounds in the world.",
-    image: "/photos/her-laugh.jpg", // Replace with your actual photo
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/2-f4e5a6?format=webp&width=800",
     date: "Music to my ears",
     emoji: "😂",
   },
   {
     id: 6,
-    title: "Dancing Together",
+    title: "Dinner Together",
     description:
-      "Whether it's in the kitchen or at a party, dancing with you always feels like we're the only two people in the world.",
-    image: "/photos/dancing.jpg", // Replace with your actual photo
-    date: "Our song, our dance",
-    emoji: "💃",
+      "You know how much both of us love food but when I had my first ever dinner sitting beside you with you I couldn't understand whether to fill my stomach or my heart by just looking at your grace.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/1-d34487?format=webp&width=800",
+    date: "Our special dinner",
+    emoji: "🍽️",
   },
   {
     id: 7,
-    title: "Morning Coffee",
+    title: "Our Perfect Morning",
     description:
-      "Those peaceful mornings sharing coffee and dreams. Starting each day with you makes everything better.",
-    image: "/photos/morning-coffee.jpg", // Replace with your actual photo
+      "Our favorite south indian breakfast we had has also have special place in my heart and stomach too.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/8-61b445?format=webp&width=800",
     date: "Perfect mornings",
     emoji: "☕",
   },
   {
     id: 8,
-    title: "Your Kindness",
+    title: "Your Cuteness",
     description:
-      "The way you care for others, your gentle heart, and how you make everyone around you feel special.",
-    image: "/photos/her-kindness.jpg", // Replace with your actual photo
+      "The cutest you are the sweetest you that level is not even possible to explain. I love you so much.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/3-0bb148?format=webp&width=800",
     date: "Your beautiful soul",
     emoji: "🤗",
   },
@@ -191,6 +198,10 @@ const Memories = () => {
                     src={memory.image}
                     alt={memory.title}
                     className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      // Fallback to placeholder if image fails to load
+                      (e.target as HTMLImageElement).src = "/placeholder.svg";
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
@@ -255,6 +266,10 @@ const Memories = () => {
                   src={selectedMemoryData.image}
                   alt={selectedMemoryData.title}
                   className="w-full h-64 md:h-96 object-cover"
+                  onError={(e) => {
+                    // Fallback to placeholder if image fails to load
+                    (e.target as HTMLImageElement).src = "/placeholder.svg";
+                  }}
                 />
 
                 {/* Close button */}
