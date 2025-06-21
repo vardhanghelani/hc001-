@@ -12,14 +12,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 
-// Placeholder memory data - you can replace with actual photos and memories
+// Memory data with your actual photos
+// TO ADD YOUR PHOTOS: Place them in the public/photos/ folder and update the image paths below
 const memories = [
   {
     id: 1,
     title: "Our First Date",
     description:
       "That magical evening when everything started. I still remember how nervous I was and how your smile made everything perfect.",
-    image: "/placeholder.svg",
+    image: "/photos/first-date.jpg", // Replace with your actual photo
     date: "The beginning of forever",
     emoji: "💕",
   },
@@ -28,7 +29,7 @@ const memories = [
     title: "Your Beautiful Smile",
     description:
       "This photo captures what I love most about you - your radiant smile that lights up my whole world.",
-    image: "/placeholder.svg",
+    image: "/photos/her-smile.jpg", // Replace with your actual photo
     date: "Every day with you",
     emoji: "😍",
   },
@@ -37,7 +38,7 @@ const memories = [
     title: "Weekend Adventures",
     description:
       "All those spontaneous trips and adventures we took together. Every moment was an adventure with you by my side.",
-    image: "/placeholder.svg",
+    image: "/photos/weekend-adventure.jpg", // Replace with your actual photo
     date: "Our favorite weekends",
     emoji: "🌟",
   },
@@ -46,7 +47,7 @@ const memories = [
     title: "Cozy Evenings",
     description:
       "Those quiet nights together, watching movies, talking about everything and nothing. The simple moments that mean the most.",
-    image: "/placeholder.svg",
+    image: "/photos/cozy-evening.jpg", // Replace with your actual photo
     date: "Home is wherever you are",
     emoji: "🏠",
   },
@@ -55,7 +56,7 @@ const memories = [
     title: "Your Laugh",
     description:
       "I love making you laugh. Your joy is infectious and it's one of my favorite sounds in the world.",
-    image: "/placeholder.svg",
+    image: "/photos/her-laugh.jpg", // Replace with your actual photo
     date: "Music to my ears",
     emoji: "😂",
   },
@@ -64,7 +65,7 @@ const memories = [
     title: "Dancing Together",
     description:
       "Whether it's in the kitchen or at a party, dancing with you always feels like we're the only two people in the world.",
-    image: "/placeholder.svg",
+    image: "/photos/dancing.jpg", // Replace with your actual photo
     date: "Our song, our dance",
     emoji: "💃",
   },
@@ -73,7 +74,7 @@ const memories = [
     title: "Morning Coffee",
     description:
       "Those peaceful mornings sharing coffee and dreams. Starting each day with you makes everything better.",
-    image: "/placeholder.svg",
+    image: "/photos/morning-coffee.jpg", // Replace with your actual photo
     date: "Perfect mornings",
     emoji: "☕",
   },
@@ -82,7 +83,7 @@ const memories = [
     title: "Your Kindness",
     description:
       "The way you care for others, your gentle heart, and how you make everyone around you feel special.",
-    image: "/placeholder.svg",
+    image: "/photos/her-kindness.jpg", // Replace with your actual photo
     date: "Your beautiful soul",
     emoji: "🤗",
   },
