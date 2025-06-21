@@ -39,7 +39,7 @@ const apologyMessages = [
   {
     title: "You're amazing",
     message:
-      "You're beautiful, intelligent, kind, and everything I could ever want in a partner. I'm so lucky to have you in my life, and I don't want to lose that.",
+      "You're beautiful, intelligent, kind, and everything I could ever want in a partner. I'm so lucky to have you in my life, and I don.",
     emoji: "✨",
   },
 ];
