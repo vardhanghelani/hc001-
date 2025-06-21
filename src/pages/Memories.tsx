@@ -132,19 +132,23 @@ const Memories = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex items-center justify-between mb-8"
+          className="flex items-center justify-between mb-6 sm:mb-8"
         >
           <Button
             variant="ghost"
             onClick={() => navigate("/")}
-            className="text-white hover:bg-white/20 transition-colors"
+            className="text-white hover:bg-white/20 transition-colors text-sm sm:text-base py-2 px-3 sm:py-2 sm:px-4"
           >
-            <ArrowLeft className="mr-2" size={20} />
-            Back Home
+            <ArrowLeft className="mr-1 sm:mr-2" size={16} />
+            <span className="hidden sm:inline">Back Home</span>
+            <span className="sm:hidden">Back</span>
           </Button>
-          <div className="text-white/80 font-medium flex items-center">
-            <Camera className="mr-2" size={20} />
-            {memories.length} Beautiful Memories
+          <div className="text-white/80 font-medium flex items-center text-sm sm:text-base">
+            <Camera className="mr-1 sm:mr-2" size={16} />
+            <span className="hidden sm:inline">
+              {memories.length} Beautiful Memories
+            </span>
+            <span className="sm:hidden">{memories.length} Photos</span>
           </div>
         </motion.div>
 
@@ -153,7 +157,7 @@ const Memories = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-4xl md:text-6xl font-bold text-center text-white mb-4"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold text-center text-white mb-4 px-4"
         >
           Our Beautiful Memories
         </motion.h1>
@@ -162,14 +166,14 @@ const Memories = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-center text-white/90 text-lg mb-12 max-w-2xl mx-auto"
+          className="text-center text-white/90 text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto px-4"
         >
           Every moment with you is a treasure. Here are some of the memories
           that make my heart full.
         </motion.p>
 
         {/* Memory Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 px-4 sm:px-0">
           {memories.map((memory, index) => (
             <motion.div
               key={memory.id}
@@ -180,21 +184,25 @@ const Memories = () => {
               className="cursor-pointer"
               onClick={() => openMemory(memory.id)}
             >
-              <Card className="card-romantic overflow-hidden group">
+              <Card className="card-romantic overflow-hidden group active:scale-95">
                 <div className="relative">
                   <img
                     src={memory.image}
                     alt={memory.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="text-2xl mb-1">{memory.emoji}</div>
-                    <h3 className="font-semibold text-lg">{memory.title}</h3>
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
+                    <div className="text-xl sm:text-2xl mb-1">
+                      {memory.emoji}
+                    </div>
+                    <h3 className="font-semibold text-base sm:text-lg">
+                      {memory.title}
+                    </h3>
                   </div>
                 </div>
-                <div className="p-4">
-                  <p className="text-gray-600 text-sm line-clamp-2">
+                <div className="p-3 sm:p-4">
+                  <p className="text-gray-600 text-xs sm:text-sm line-clamp-2">
                     {memory.description}
                   </p>
                   <p className="text-rose-500 text-xs mt-2 font-medium">
