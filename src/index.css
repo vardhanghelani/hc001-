@@ -227,14 +227,49 @@
 
 @layer components {
   .btn-romantic {
-    @apply bg-gradient-to-r from-rose-400 to-pink-500 hover:from-rose-500 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
+    @apply bg-gradient-to-r from-rose-400 to-pink-500 hover:from-rose-500 hover:to-pink-600 active:from-rose-600 active:to-pink-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl active:shadow-md transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation;
   }
 
   .card-romantic {
-    @apply bg-white/80 backdrop-blur-sm border border-rose-200 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8;
+    @apply bg-white/80 backdrop-blur-sm border border-rose-200 rounded-2xl shadow-xl hover:shadow-2xl active:shadow-lg transition-all duration-500 p-4 sm:p-6 lg:p-8 touch-manipulation;
   }
 
   .text-romantic {
     @apply bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent;
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    .floating-hearts .heart {
+      opacity: 0.2;
+    }
+
+    .card-romantic {
+      @apply shadow-lg hover:shadow-xl;
+    }
+
+    .btn-romantic {
+      @apply min-h-[44px] min-w-[44px];
+    }
+  }
+
+  /* Improve touch targets */
+  button,
+  .cursor-pointer {
+    @apply touch-manipulation;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce animation intensity on mobile */
+  @media (prefers-reduced-motion: reduce) {
+    .heart,
+    .sparkle {
+      animation: none;
+    }
+
+    .floating-hearts {
+      display: none;
+    }
   }
 }
