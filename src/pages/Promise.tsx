@@ -10,28 +10,28 @@ const promises = [
     icon: Heart,
     title: "I promise to love you unconditionally",
     description:
-      "No matter what happens, my love for you will never waver. You are my heart, my soul, my everything.",
+      "No matter what happens, my love for you will never waver.Am j prem aptoo rais nd leto pn rais.",
     color: "text-rose-500",
   },
   {
     icon: Star,
     title: "I promise to always listen",
     description:
-      "Your thoughts, feelings, and dreams matter to me. I'll always give you my full attention and support.",
+      "listen to hu always kru j chuu bss khali kok vaar vche vche boli jav chuu .",
     color: "text-yellow-500",
   },
   {
     icon: Crown,
-    title: "I promise to treat you like the queen you are",
+    title: "I promise to treat you like the princess you are",
     description:
-      "You deserve to be cherished, respected, and treated with the love and care you give to everyone else.",
+      "Mari princess ne hmesha princess ni jm j rakhis and eni sathe always princess treatment j apiss.",
     color: "text-purple-500",
   },
   {
     icon: Gift,
     title: "I promise to make you feel special every day",
     description:
-      "Little surprises, sweet messages, and thoughtful gestures to remind you how amazing you are.",
+      "Little surprises, sweet messages, and biju bdhu j je tne khush kre to remind you how amazing you are.",
     color: "text-green-500",
   },
   {
@@ -41,13 +41,7 @@ const promises = [
       "I'll work on myself, learn from my mistakes, and become the partner you deserve.",
     color: "text-blue-500",
   },
-  {
-    icon: Heart,
-    title: "I promise to never take you for granted again",
-    description:
-      "Every moment with you is a gift, and I'll appreciate and cherish every second we have together.",
-    color: "text-pink-500",
-  },
+  
 ];
 
 const Promise = () => {
