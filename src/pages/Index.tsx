@@ -1,41 +1,260 @@
-const Index = () => {
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Heart, Sparkles, ArrowRight, Gift } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
+
+const FloatingHearts = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
+    <div className="floating-hearts">
+      {[...Array(9)].map((_, i) => (
+        <Heart key={i} className="heart" size={20 + Math.random() * 20} />
+      ))}
+    </div>
+  );
+};
+
+const Sparkle = ({ delay = 0 }: { delay?: number }) => (
+  <motion.div
+    className="absolute"
+    initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
+    transition={{
+      duration: 2,
+      delay,
+      repeat: Infinity,
+      repeatDelay: 3,
+    }}
+  >
+    <Sparkles className="text-gold" size={16} />
+  </motion.div>
+);
+
+const Index = () => {
+  const navigate = useNavigate();
+  const [currentMessage, setCurrentMessage] = useState(0);
+  const [showMainContent, setShowMainContent] = useState(false);
+
+  const openingMessages = [
+    "I have something important to tell you...",
+    "Something I've been wanting to say...",
+    "From the bottom of my heart...",
+  ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMainContent(true);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!showMainContent) {
+      const interval = setInterval(() => {
+        setCurrentMessage((prev) => (prev + 1) % openingMessages.length);
+      }, 1200);
+      return () => clearInterval(interval);
+    }
+  }, [showMainContent, openingMessages.length]);
+
+  if (!showMainContent) {
+    return (
+      <div className="min-h-screen romantic-gradient flex items-center justify-center relative overflow-hidden">
+        <FloatingHearts />
+        <motion.div
+          className="text-center z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            key={currentMessage}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8 }}
+            className="text-2xl md:text-4xl font-semibold text-white text-center px-4"
           >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
+            {openingMessages[currentMessage]}
+          </motion.div>
+          <motion.div
+            className="mt-8"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <Heart className="text-white mx-auto" size={40} />
+          </motion.div>
+        </motion.div>
       </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen romantic-gradient relative overflow-hidden">
+      <FloatingHearts />
+
+      {/* Sparkles */}
+      <Sparkle delay={0} />
+      <Sparkle delay={1} />
+      <Sparkle delay={2} />
+
+      <div className="relative z-10 container mx-auto px-4 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center mb-16"
+        >
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            I'm{" "}
+            <span className="text-romantic bg-white bg-clip-text">Sorry</span>
+          </motion.h1>
+          <motion.p
+            className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            My dearest love, I made a mistake and I want to make it right. This
+            website is my way of showing you how much you mean to me.
+          </motion.p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            <Card
+              className="card-romantic h-full group cursor-pointer"
+              onClick={() => navigate("/sorry")}
+            >
+              <div className="text-center">
+                <motion.div
+                  className="inline-block p-4 bg-rose-100 rounded-full mb-4"
+                  whileHover={{ scale: 1.1, rotate: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Heart className="text-rose-600" size={32} />
+                </motion.div>
+                <h3 className="text-2xl font-semibold text-romantic mb-4">
+                  My Apology
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Read my heartfelt messages and see how sorry I truly am
+                </p>
+                <Button className="btn-romantic group-hover:shadow-lg">
+                  Read Messages <ArrowRight className="ml-2" size={16} />
+                </Button>
+              </div>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            <Card
+              className="card-romantic h-full group cursor-pointer"
+              onClick={() => navigate("/memories")}
+            >
+              <div className="text-center">
+                <motion.div
+                  className="inline-block p-4 bg-peach rounded-full mb-4"
+                  whileHover={{ scale: 1.1, rotate: -10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Sparkles className="text-orange-600" size={32} />
+                </motion.div>
+                <h3 className="text-2xl font-semibold text-romantic mb-4">
+                  Our Memories
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  A collection of all our beautiful moments together
+                </p>
+                <Button className="btn-romantic group-hover:shadow-lg">
+                  View Gallery <ArrowRight className="ml-2" size={16} />
+                </Button>
+              </div>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <Card
+              className="card-romantic h-full group cursor-pointer"
+              onClick={() => navigate("/promise")}
+            >
+              <div className="text-center">
+                <motion.div
+                  className="inline-block p-4 bg-lavender rounded-full mb-4"
+                  whileHover={{ scale: 1.1, rotate: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Gift className="text-purple-600" size={32} />
+                </motion.div>
+                <h3 className="text-2xl font-semibold text-romantic mb-4">
+                  My Promise
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  See how I plan to make things better and love you more
+                </p>
+                <Button className="btn-romantic group-hover:shadow-lg">
+                  My Promises <ArrowRight className="ml-2" size={16} />
+                </Button>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="text-center"
+        >
+          <motion.div
+            className="inline-block"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <p className="text-white/80 text-lg mb-4">
+              Click on any card above to start your journey
+            </p>
+            <Heart
+              className="text-white mx-auto animate-heart-beat"
+              size={24}
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Floating elements */}
+      <motion.div
+        className="absolute top-1/4 left-10 text-white/30"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      >
+        <Sparkles size={32} />
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-1/4 right-10 text-white/30"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+      >
+        <Heart size={28} />
+      </motion.div>
     </div>
   );
 };
