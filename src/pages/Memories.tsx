@@ -193,24 +193,32 @@ const Memories = () => {
               onClick={() => openMemory(memory.id)}
             >
               <Card className="card-romantic overflow-hidden group active:scale-95">
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <img
                     src={memory.image}
                     alt={memory.title}
                     className={`w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500 ${
                       memory.id === 4 ? "rotate-180 scale-x-[-1]" : ""
-                    } ${
-                      [5, 6, 7].includes(memory.id)
-                        ? "rotate-90 scale-150 object-center"
-                        : ""
                     }`}
+                    style={
+                      [5, 6, 7].includes(memory.id)
+                        ? {
+                            transform: "rotate(90deg)",
+                            transformOrigin: "center center",
+                            width: "120%",
+                            height: "120%",
+                            marginLeft: "-10%",
+                            marginTop: "-10%",
+                          }
+                        : {}
+                    }
                     onError={(e) => {
                       // Fallback to placeholder if image fails to load
                       (e.target as HTMLImageElement).src = "/placeholder.svg";
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white z-10">
                     <div className="text-xl sm:text-2xl mb-1">
                       {memory.emoji}
                     </div>
@@ -267,17 +275,21 @@ const Memories = () => {
               className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <img
                   src={selectedMemoryData.image}
                   alt={selectedMemoryData.title}
                   className={`w-full h-64 md:h-96 object-cover ${
                     selectedMemoryData.id === 4 ? "rotate-180 scale-x-[-1]" : ""
-                  } ${
-                    [5, 6, 7].includes(selectedMemoryData.id)
-                      ? "rotate-90 scale-150 object-center"
-                      : ""
                   }`}
+                  style={
+                    [5, 6, 7].includes(selectedMemoryData.id)
+                      ? {
+                          transform: "rotate(90deg)",
+                          transformOrigin: "center center",
+                        }
+                      : {}
+                  }
                   onError={(e) => {
                     // Fallback to placeholder if image fails to load
                     (e.target as HTMLImageElement).src = "/placeholder.svg";
