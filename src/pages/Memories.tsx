@@ -12,14 +12,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 
-// Placeholder memory data - you can replace with actual photos and memories
+// Memory data with your actual photos assigned by image numbers
 const memories = [
   {
     id: 1,
     title: "Our First Date",
     description:
-      "The first unexpacted date happened due to othr person thhat will be remebered forever .",
-    image: "../images/1.jpg",
+      "That magical evening when everything started. I still remember how nervous I was and how your smile made everything perfect.",
+    image: "/placeholder.svg",
     date: "The beginning of forever",
     emoji: "💕",
   },
@@ -28,7 +28,7 @@ const memories = [
     title: "Your Beautiful Smile",
     description:
       "This photo captures what I love most about you - your radiant smile that lights up my whole world.",
-    image: "",
+    image: "/placeholder.svg",
     date: "Every day with you",
     emoji: "😍",
   },
@@ -36,26 +36,26 @@ const memories = [
     id: 3,
     title: "Video call Adventures",
     description:
-      "Video calls have always been special part of our lives and that still continues without them this relationships would never been survived .",
-    image: "",
-    date: "Our favorite activity",
+      "All those spontaneous trips and adventures we took together. Every moment was an adventure with you by my side.",
+    image: "/placeholder.svg",
+    date: "Our favorite weekends",
     emoji: "🌟",
   },
   {
     id: 4,
-    title: "Biggest suprise of my Life",
+    title: "Cozy Evenings",
     description:
-      "The day that still my heart couldnt digest the bestesttttt suprise of my lifee and golden period of our lives.",
+      "Those quiet nights together, watching movies, talking about everything and nothing. The simple moments that mean the most.",
     image: "/placeholder.svg",
-    date: "bestest suprise",
-    emoji: "😍",
+    date: "Home is wherever you are",
+    emoji: "🏠",
   },
   {
     id: 5,
     title: "Your Laugh",
     description:
       "I love making you laugh. Your joy is infectious and it's one of my favorite sounds in the world.",
-    image: "",
+    image: "/placeholder.svg",
     date: "Music to my ears",
     emoji: "😂",
   },
@@ -63,26 +63,26 @@ const memories = [
     id: 6,
     title: "Dinner Together",
     description:
-      "You know how much both of us loves food but when i had my first ever dinner sitting beside you with you i couldnt understand wether to fill my stomach or my heart by just lookking at your grace.",
+      "Whether it's in the kitchen or at a party, dancing with you always feels like we're the only two people in the world.",
     image: "/placeholder.svg",
     date: "Our song, our dance",
-    emoji: "🍽️",
+    emoji: "💃",
   },
   {
     id: 7,
     title: "Our Perfect Morning",
     description:
-      "Our favorite south indian breakfast we had has also have special place in my heart and stomach too.",
+      "Those peaceful mornings sharing coffee and dreams. Starting each day with you makes everything better.",
     image: "/placeholder.svg",
     date: "Perfect mornings",
     emoji: "☕",
   },
   {
     id: 8,
-    title: "Your Cutness",
+    title: "Your Kindness",
     description:
-      "the cutest you are the sweetest you that level is not even possible to explain. i love you so much." ,
-    image: "",
+      "The way you care for others, your gentle heart, and how you make everyone around you feel special.",
+    image: "/placeholder.svg",
     date: "Your beautiful soul",
     emoji: "🤗",
   },
@@ -185,14 +185,32 @@ const Memories = () => {
               onClick={() => openMemory(memory.id)}
             >
               <Card className="card-romantic overflow-hidden group active:scale-95">
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <img
                     src={memory.image}
                     alt={memory.title}
-                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className={`w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500 ${
+                      memory.id === 4 ? "rotate-180 scale-x-[-1]" : ""
+                    }`}
+                    style={
+                      [5, 6, 7].includes(memory.id)
+                        ? {
+                            transform: "rotate(90deg)",
+                            transformOrigin: "center center",
+                            width: "120%",
+                            height: "120%",
+                            marginLeft: "-10%",
+                            marginTop: "-10%",
+                          }
+                        : {}
+                    }
+                    onError={(e) => {
+                      // Fallback to placeholder if image fails to load
+                      (e.target as HTMLImageElement).src = "/placeholder.svg";
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white z-10">
                     <div className="text-xl sm:text-2xl mb-1">
                       {memory.emoji}
                     </div>
@@ -249,11 +267,25 @@ const Memories = () => {
               className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <img
                   src={selectedMemoryData.image}
                   alt={selectedMemoryData.title}
-                  className="w-full h-64 md:h-96 object-cover"
+                  className={`w-full h-64 md:h-96 object-cover ${
+                    selectedMemoryData.id === 4 ? "rotate-180 scale-x-[-1]" : ""
+                  }`}
+                  style={
+                    [5, 6, 7].includes(selectedMemoryData.id)
+                      ? {
+                          transform: "rotate(90deg)",
+                          transformOrigin: "center center",
+                        }
+                      : {}
+                  }
+                  onError={(e) => {
+                    // Fallback to placeholder if image fails to load
+                    (e.target as HTMLImageElement).src = "/placeholder.svg";
+                  }}
                 />
 
                 {/* Close button */}
