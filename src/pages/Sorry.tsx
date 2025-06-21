@@ -9,13 +9,13 @@ const apologyMessages = [
   {
     title: "I'm truly sorry",
     message:
-      "I know I hurt you, and I can't take back what I did. But I want you to know that I recognize my mistake and I'm genuinely sorry from the bottom of my heart.",
+      "I know I hurt you, and I can't take back what I did. but i really do sorry hve thi dhyan rakhis demand krvama and kaik sambhdava pela tu pn dhyan rakhje hoooo.",
     emoji: "💔",
   },
   {
     title: "You mean everything to me",
     message:
-      "You are the most important person in my life. I never want to lose you or make you feel unvalued. You deserve so much better than how I treated you.",
+      "You are the most important person in my life. I never want to lose you or make you feel unvalued. how much you mean to me is unexplainable in words .",
     emoji: "💕",
   },
   {
@@ -27,19 +27,19 @@ const apologyMessages = [
   {
     title: "Please forgive me",
     message:
-      "I know forgiveness isn't something I can demand or expect immediately. But I'm hoping that you can find it in your heart to forgive me, in time.",
+      "I know me je kyru ee brbr notu but bhai hu to bhul krvano j bcoz chu hu manas etle bss tu mne jldi jldi maaf kri deje and biji vaar thi bhul krvama dhyan raakhis okayyyyy..",
     emoji: "💫",
   },
   {
     title: "I love you so much",
     message:
-      "My love for you is real and deep. I love your smile, your laugh, the way you care for others, and how you make everything better just by being you.",
+      "i really  do love you more than you can ever think my babliiii. Bss hve jldii mlvi evu pray kr and ena mate full support kr i only need that much .",
     emoji: "💖",
   },
   {
     title: "You're amazing",
     message:
-      "You're beautiful, intelligent, kind, and everything I could ever want in a partner. I'm so lucky to have you in my life, and I don.",
+      "You're beautiful, intelligent, sexyyy, and everything I could ever want in a partner. I'm so lucky to have you in my life, and bss am j sathe reje.",
     emoji: "✨",
   },
 ];
