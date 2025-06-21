@@ -83,17 +83,18 @@ const Sorry = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex items-center justify-between mb-8"
+          className="flex items-center justify-between mb-6 sm:mb-8"
         >
           <Button
             variant="ghost"
             onClick={() => navigate("/")}
-            className="text-white hover:bg-white/20 transition-colors"
+            className="text-white hover:bg-white/20 transition-colors text-sm sm:text-base py-2 px-3 sm:py-2 sm:px-4"
           >
-            <ArrowLeft className="mr-2" size={20} />
-            Back Home
+            <ArrowLeft className="mr-1 sm:mr-2" size={16} />
+            <span className="hidden sm:inline">Back Home</span>
+            <span className="sm:hidden">Back</span>
           </Button>
-          <div className="text-white/80 font-medium">
+          <div className="text-white/80 font-medium text-sm sm:text-base">
             {currentMessage + 1} of {apologyMessages.length}
           </div>
         </motion.div>
@@ -104,7 +105,7 @@ const Sorry = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold text-center text-white mb-12"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold text-center text-white mb-8 sm:mb-12 px-4"
           >
             My Heartfelt Apology
           </motion.h1>
@@ -124,13 +125,13 @@ const Sorry = () => {
                 exit={{ opacity: 0, x: -300 }}
                 transition={{ duration: 0.5 }}
               >
-                <Card className="card-romantic text-center relative overflow-hidden">
+                <Card className="card-romantic text-center relative overflow-hidden mx-4 sm:mx-0">
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 bg-shimmer bg-shimmer animate-shimmer opacity-30"></div>
 
-                  <div className="relative z-10">
+                  <div className="relative z-10 p-4 sm:p-6">
                     <motion.div
-                      className="text-6xl mb-6"
+                      className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6"
                       animate={{ scale: [1, 1.1, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
@@ -138,7 +139,7 @@ const Sorry = () => {
                     </motion.div>
 
                     <motion.h2
-                      className="text-3xl md:text-4xl font-bold text-romantic mb-6"
+                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-romantic mb-4 sm:mb-6"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.2 }}
@@ -147,7 +148,7 @@ const Sorry = () => {
                     </motion.h2>
 
                     <motion.p
-                      className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 px-4"
+                      className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8 px-2 sm:px-4"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.4 }}
@@ -161,8 +162,8 @@ const Sorry = () => {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.6 }}
                     >
-                      <MessageCircle className="text-rose-400 mr-2" size={24} />
-                      <span className="text-rose-600 font-medium">
+                      <MessageCircle className="text-rose-400 mr-2" size={20} />
+                      <span className="text-rose-600 font-medium text-sm sm:text-base">
                         With all my love
                       </span>
                     </motion.div>
@@ -177,23 +178,24 @@ const Sorry = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="flex justify-between items-center mt-8"
+            className="flex justify-between items-center mt-6 sm:mt-8 px-4 sm:px-0"
           >
             <Button
               onClick={prevMessage}
               disabled={currentMessage === 0}
               variant="outline"
-              className="bg-white/20 border-white/30 text-white hover:bg-white/30 disabled:opacity-50"
+              className="bg-white/20 border-white/30 text-white hover:bg-white/30 disabled:opacity-50 text-sm sm:text-base px-3 sm:px-4 py-2"
             >
-              <ArrowLeft className="mr-2" size={16} />
-              Previous
+              <ArrowLeft className="mr-1 sm:mr-2" size={14} />
+              <span className="hidden sm:inline">Previous</span>
+              <span className="sm:hidden">Prev</span>
             </Button>
 
-            <div className="flex space-x-2">
+            <div className="flex space-x-1 sm:space-x-2">
               {apologyMessages.map((_, index) => (
                 <motion.div
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-colors cursor-pointer ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors cursor-pointer ${
                     index === currentMessage ? "bg-white" : "bg-white/40"
                   }`}
                   onClick={() => setCurrentMessage(index)}
@@ -207,10 +209,11 @@ const Sorry = () => {
               onClick={nextMessage}
               disabled={currentMessage === apologyMessages.length - 1}
               variant="outline"
-              className="bg-white/20 border-white/30 text-white hover:bg-white/30 disabled:opacity-50"
+              className="bg-white/20 border-white/30 text-white hover:bg-white/30 disabled:opacity-50 text-sm sm:text-base px-3 sm:px-4 py-2"
             >
-              Next
-              <ArrowRight className="ml-2" size={16} />
+              <span className="hidden sm:inline">Next</span>
+              <span className="sm:hidden">Next</span>
+              <ArrowRight className="ml-1 sm:ml-2" size={14} />
             </Button>
           </motion.div>
 
