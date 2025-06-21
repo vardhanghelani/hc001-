@@ -199,7 +199,7 @@ const Memories = () => {
                     alt={memory.title}
                     className={`w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500 ${
                       memory.id === 4 ? "rotate-180 scale-x-[-1]" : ""
-                    }`}
+                    } ${[5, 6, 7].includes(memory.id) ? "rotate-90" : ""}`}
                     onError={(e) => {
                       // Fallback to placeholder if image fails to load
                       (e.target as HTMLImageElement).src = "/placeholder.svg";
@@ -269,6 +269,8 @@ const Memories = () => {
                   alt={selectedMemoryData.title}
                   className={`w-full h-64 md:h-96 object-cover ${
                     selectedMemoryData.id === 4 ? "rotate-180 scale-x-[-1]" : ""
+                  } ${
+                    [5, 6, 7].includes(selectedMemoryData.id) ? "rotate-90" : ""
                   }`}
                   onError={(e) => {
                     // Fallback to placeholder if image fails to load
