@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 
-// Memory data with your actual photos and personal messages
+// Memory data with your actual photos assigned by image numbers
 const memories = [
   {
     id: 1,
@@ -20,7 +20,7 @@ const memories = [
     description:
       "The first unexpected date happened due to other person that will be remembered forever.",
     image:
-      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/1-d34487?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/1-d34487?format=webp&width=800", // Image 1
     date: "The beginning of forever",
     emoji: "💕",
   },
@@ -30,7 +30,7 @@ const memories = [
     description:
       "This photo captures what I love most about you - your radiant smile that lights up my whole world.",
     image:
-      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/2-f4e5a6?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/2-f4e5a6?format=webp&width=800", // Image 2
     date: "Every day with you",
     emoji: "😍",
   },
@@ -40,7 +40,7 @@ const memories = [
     description:
       "Video calls have always been special part of our lives and that still continues without them this relationship would never have survived.",
     image:
-      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/3-0bb148?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/3-0bb148?format=webp&width=800", // Image 3
     date: "Our favorite activity",
     emoji: "🌟",
   },
@@ -49,8 +49,7 @@ const memories = [
     title: "Biggest surprise of my Life",
     description:
       "The day that still my heart couldn't digest the bestesttttt surprise of my life and golden period of our lives.",
-    image:
-      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/8-61b445?format=webp&width=800",
+    image: "/placeholder.svg", // Image 4 (not available, using placeholder)
     date: "bestest surprise",
     emoji: "😍",
   },
@@ -59,8 +58,7 @@ const memories = [
     title: "Your Laugh",
     description:
       "I love making you laugh. Your joy is infectious and it's one of my favorite sounds in the world.",
-    image:
-      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/2-f4e5a6?format=webp&width=800",
+    image: "/placeholder.svg", // Image 5 (not available, using placeholder)
     date: "Music to my ears",
     emoji: "😂",
   },
@@ -69,8 +67,7 @@ const memories = [
     title: "Dinner Together",
     description:
       "You know how much both of us love food but when I had my first ever dinner sitting beside you with you I couldn't understand whether to fill my stomach or my heart by just looking at your grace.",
-    image:
-      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/1-d34487?format=webp&width=800",
+    image: "/placeholder.svg", // Image 6 (not available, using placeholder)
     date: "Our special dinner",
     emoji: "🍽️",
   },
@@ -79,8 +76,7 @@ const memories = [
     title: "Our Perfect Morning",
     description:
       "Our favorite south indian breakfast we had has also have special place in my heart and stomach too.",
-    image:
-      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/8-61b445?format=webp&width=800",
+    image: "/placeholder.svg", // Image 7 (not available, using placeholder)
     date: "Perfect mornings",
     emoji: "☕",
   },
@@ -90,7 +86,7 @@ const memories = [
     description:
       "The cutest you are the sweetest you that level is not even possible to explain. I love you so much.",
     image:
-      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/3-0bb148?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/8-61b445?format=webp&width=800", // Image 8
     date: "Your beautiful soul",
     emoji: "🤗",
   },
