@@ -18,8 +18,9 @@ const memories = [
     id: 1,
     title: "Our First Date",
     description:
-      "That magical evening when everything started. I still remember how nervous I was and how your smile made everything perfect.",
-    image: "/placeholder.svg",
+      "The first unexpected date happened due to other person that will be remembered forever.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/1-d34487?format=webp&width=800", // Image 1
     date: "The beginning of forever",
     emoji: "💕",
   },
@@ -28,7 +29,8 @@ const memories = [
     title: "Your Beautiful Smile",
     description:
       "This photo captures what I love most about you - your radiant smile that lights up my whole world.",
-    image: "/placeholder.svg",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/2-f4e5a6?format=webp&width=800", // Image 2
     date: "Every day with you",
     emoji: "😍",
   },
@@ -36,26 +38,29 @@ const memories = [
     id: 3,
     title: "Video call Adventures",
     description:
-      "All those spontaneous trips and adventures we took together. Every moment was an adventure with you by my side.",
-    image: "/placeholder.svg",
-    date: "Our favorite weekends",
+      "Video calls have always been special part of our lives and that still continues without them this relationship would never have survived.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/3-0bb148?format=webp&width=800", // Image 3
+    date: "Our favorite activity",
     emoji: "🌟",
   },
   {
     id: 4,
-    title: "Cozy Evenings",
+    title: "Biggest surprise of my Life",
     description:
-      "Those quiet nights together, watching movies, talking about everything and nothing. The simple moments that mean the most.",
-    image: "/placeholder.svg",
-    date: "Home is wherever you are",
-    emoji: "🏠",
+      "The day that still my heart couldn't digest the bestesttttt surprise of my life and golden period of our lives.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/4-7756de?format=webp&width=800", // Image 4
+    date: "bestest surprise",
+    emoji: "😍",
   },
   {
     id: 5,
     title: "Your Laugh",
     description:
       "I love making you laugh. Your joy is infectious and it's one of my favorite sounds in the world.",
-    image: "/placeholder.svg",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/5-114a28?format=webp&width=800", // Image 5
     date: "Music to my ears",
     emoji: "😂",
   },
@@ -63,26 +68,29 @@ const memories = [
     id: 6,
     title: "Dinner Together",
     description:
-      "Whether it's in the kitchen or at a party, dancing with you always feels like we're the only two people in the world.",
-    image: "/placeholder.svg",
-    date: "Our song, our dance",
-    emoji: "💃",
+      "You know how much both of us love food but when I had my first ever dinner sitting beside you with you I couldn't understand whether to fill my stomach or my heart by just looking at your grace.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/6-cd79dd?format=webp&width=800", // Image 6
+    date: "Our special dinner",
+    emoji: "🍽️",
   },
   {
     id: 7,
     title: "Our Perfect Morning",
     description:
-      "Those peaceful mornings sharing coffee and dreams. Starting each day with you makes everything better.",
-    image: "/placeholder.svg",
+      "Our favorite south indian breakfast we had has also have special place in my heart and stomach too.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/7-2a07e6?format=webp&width=800", // Image 7
     date: "Perfect mornings",
     emoji: "☕",
   },
   {
     id: 8,
-    title: "Your Kindness",
+    title: "Your Cuteness",
     description:
-      "The way you care for others, your gentle heart, and how you make everyone around you feel special.",
-    image: "/placeholder.svg",
+      "The cutest you are the sweetest you that level is not even possible to explain. I love you so much.",
+    image:
+      "https://cdn.builder.io/api/v1/assets/165915e7ecff41aabdce9648efca0803/8-61b445?format=webp&width=800", // Image 8
     date: "Your beautiful soul",
     emoji: "🤗",
   },
