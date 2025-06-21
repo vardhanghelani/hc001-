@@ -8,34 +8,40 @@ import { useNavigate } from "react-router-dom";
 const apologyMessages = [
   {
     title: "I'm truly sorry",
-    message: "I know I hurt you, and I can't take back what I did. But I want you to know that I recognize my mistake and I'm genuinely sorry from the bottom of my heart.",
-    emoji: "💔"
+    message:
+      "I know I hurt you, and I can't take back what I did. But I want you to know that I recognize my mistake and I'm genuinely sorry from the bottom of my heart.",
+    emoji: "💔",
   },
   {
     title: "You mean everything to me",
-    message: "You are the most important person in my life. I never want to lose you or make you feel unvalued. You deserve so much better than how I treated you.",
-    emoji: "💕"
+    message:
+      "You are the most important person in my life. I never want to lose you or make you feel unvalued. You deserve so much better than how I treated you.",
+    emoji: "💕",
   },
   {
     title: "I take full responsibility",
-    message: "I'm not making excuses. What I did was wrong, and I take full responsibility for my actions. I should have been better, and I promise to learn from this.",
-    emoji: "🙏"
+    message:
+      "I'm not making excuses. What I did was wrong, and I take full responsibility for my actions. I should have been better, and I promise to learn from this.",
+    emoji: "🙏",
   },
   {
     title: "Please forgive me",
-    message: "I know forgiveness isn't something I can demand or expect immediately. But I'm hoping that you can find it in your heart to forgive me, in time.",
-    emoji: "💫"
+    message:
+      "I know forgiveness isn't something I can demand or expect immediately. But I'm hoping that you can find it in your heart to forgive me, in time.",
+    emoji: "💫",
   },
   {
     title: "I love you so much",
-    message: "My love for you is real and deep. I love your smile, your laugh, the way you care for others, and how you make everything better just by being you.",
-    emoji: "💖"
+    message:
+      "My love for you is real and deep. I love your smile, your laugh, the way you care for others, and how you make everything better just by being you.",
+    emoji: "💖",
   },
   {
     title: "You're amazing",
-    message: "You're beautiful, intelligent, kind, and everything I could ever want in a partner. I'm so lucky to have you in my life, and I don't want to lose that.",
-    emoji: "✨"
-  }
+    message:
+      "You're beautiful, intelligent, kind, and everything I could ever want in a partner. I'm so lucky to have you in my life, and I don't want to lose that.",
+    emoji: "✨",
+  },
 ];
 
 const Sorry = () => {
@@ -79,9 +85,9 @@ const Sorry = () => {
           transition={{ duration: 0.8 }}
           className="flex items-center justify-between mb-8"
         >
-          <Button 
-            variant="ghost" 
-            onClick={() => navigate('/')}
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/")}
             className="text-white hover:bg-white/20 transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
@@ -121,7 +127,7 @@ const Sorry = () => {
                 <Card className="card-romantic text-center relative overflow-hidden">
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 bg-shimmer bg-shimmer animate-shimmer opacity-30"></div>
-                  
+
                   <div className="relative z-10">
                     <motion.div
                       className="text-6xl mb-6"
@@ -130,7 +136,7 @@ const Sorry = () => {
                     >
                       {apologyMessages[currentMessage].emoji}
                     </motion.div>
-                    
+
                     <motion.h2
                       className="text-3xl md:text-4xl font-bold text-romantic mb-6"
                       initial={{ opacity: 0 }}
@@ -139,7 +145,7 @@ const Sorry = () => {
                     >
                       {apologyMessages[currentMessage].title}
                     </motion.h2>
-                    
+
                     <motion.p
                       className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 px-4"
                       initial={{ opacity: 0 }}
@@ -148,7 +154,7 @@ const Sorry = () => {
                     >
                       {apologyMessages[currentMessage].message}
                     </motion.p>
-                    
+
                     <motion.div
                       className="flex items-center justify-center"
                       initial={{ opacity: 0 }}
@@ -156,7 +162,9 @@ const Sorry = () => {
                       transition={{ delay: 0.6 }}
                     >
                       <MessageCircle className="text-rose-400 mr-2" size={24} />
-                      <span className="text-rose-600 font-medium">With all my love</span>
+                      <span className="text-rose-600 font-medium">
+                        With all my love
+                      </span>
                     </motion.div>
                   </div>
                 </Card>
@@ -186,7 +194,7 @@ const Sorry = () => {
                 <motion.div
                   key={index}
                   className={`w-3 h-3 rounded-full transition-colors cursor-pointer ${
-                    index === currentMessage ? 'bg-white' : 'bg-white/40'
+                    index === currentMessage ? "bg-white" : "bg-white/40"
                   }`}
                   onClick={() => setCurrentMessage(index)}
                   whileHover={{ scale: 1.2 }}
@@ -204,7 +212,7 @@ const Sorry = () => {
               Next
               <ArrowRight className="ml-2" size={16} />
             </Button>
-          </div>
+          </motion.div>
 
           {/* Continue button */}
           {currentMessage === apologyMessages.length - 1 && (
@@ -215,7 +223,7 @@ const Sorry = () => {
               className="text-center mt-12"
             >
               <Button
-                onClick={() => navigate('/memories')}
+                onClick={() => navigate("/memories")}
                 className="btn-romantic text-lg px-8 py-4"
               >
                 See Our Beautiful Memories
@@ -228,27 +236,27 @@ const Sorry = () => {
         {/* Floating decorative elements */}
         <motion.div
           className="absolute top-20 left-10 text-white/20"
-          animate={{ 
+          animate={{
             rotate: 360,
-            y: [0, -20, 0]
+            y: [0, -20, 0],
           }}
-          transition={{ 
+          transition={{
             rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-            y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
           }}
         >
           <Heart size={40} />
         </motion.div>
-        
+
         <motion.div
           className="absolute bottom-20 right-10 text-white/20"
-          animate={{ 
+          animate={{
             rotate: -360,
-            y: [0, 20, 0]
+            y: [0, 20, 0],
           }}
-          transition={{ 
+          transition={{
             rotate: { duration: 25, repeat: Infinity, ease: "linear" },
-            y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+            y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
           }}
         >
           <Heart size={35} />
