@@ -88,17 +88,21 @@ const Promise = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex items-center justify-between mb-8"
+          className="flex items-center justify-between mb-6 sm:mb-8"
         >
           <Button
             variant="ghost"
             onClick={() => navigate("/")}
-            className="text-white hover:bg-white/20 transition-colors"
+            className="text-white hover:bg-white/20 transition-colors text-sm sm:text-base py-2 px-3 sm:py-2 sm:px-4"
           >
-            <ArrowLeft className="mr-2" size={20} />
-            Back Home
+            <ArrowLeft className="mr-1 sm:mr-2" size={16} />
+            <span className="hidden sm:inline">Back Home</span>
+            <span className="sm:hidden">Back</span>
           </Button>
-          <div className="text-white/80 font-medium">My Sacred Promises</div>
+          <div className="text-white/80 font-medium text-sm sm:text-base">
+            <span className="hidden sm:inline">My Sacred Promises</span>
+            <span className="sm:hidden">Promises</span>
+          </div>
         </motion.div>
 
         {/* Title */}
@@ -106,12 +110,12 @@ const Promise = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12 px-4"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
             My Promises To You
           </h1>
-          <p className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-white/90 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             These aren't just words - they're commitments from my heart. I
             promise to be the partner you deserve and to love you better every
             day.
@@ -119,7 +123,7 @@ const Promise = () => {
         </motion.div>
 
         {/* Promises Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 px-4 sm:px-0">
           {promises.map((promise, index) => {
             const Icon = promise.icon;
             const isRevealed = revealedPromises.includes(index);
@@ -154,9 +158,9 @@ const Promise = () => {
                     />
                   )}
 
-                  <div className="relative z-10 text-center">
+                  <div className="relative z-10 text-center p-4 sm:p-6">
                     <motion.div
-                      className={`inline-block p-6 rounded-full mb-6 ${isRevealed ? "bg-white" : "bg-gray-100"}`}
+                      className={`inline-block p-4 sm:p-6 rounded-full mb-4 sm:mb-6 ${isRevealed ? "bg-white" : "bg-gray-100"}`}
                       animate={
                         isRevealed
                           ? {
@@ -173,19 +177,19 @@ const Promise = () => {
                     >
                       <Icon
                         className={`${promise.color} ${isRevealed ? "opacity-100" : "opacity-50"}`}
-                        size={40}
+                        size={32}
                       />
                     </motion.div>
 
                     <motion.h3
-                      className={`text-xl md:text-2xl font-semibold mb-4 ${isRevealed ? "text-romantic" : "text-gray-400"}`}
+                      className={`text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 ${isRevealed ? "text-romantic" : "text-gray-400"}`}
                       animate={isRevealed ? { opacity: 1 } : { opacity: 0.5 }}
                     >
                       {promise.title}
                     </motion.h3>
 
                     <motion.p
-                      className={`text-gray-600 leading-relaxed ${isRevealed ? "opacity-100" : "opacity-50"}`}
+                      className={`text-sm sm:text-base text-gray-600 leading-relaxed ${isRevealed ? "opacity-100" : "opacity-50"}`}
                       animate={isRevealed ? { opacity: 1 } : { opacity: 0.5 }}
                       transition={{ delay: 0.3 }}
                     >
@@ -223,17 +227,19 @@ const Promise = () => {
             transition={{ duration: 1 }}
             className="text-center"
           >
-            <Card className="card-romantic max-w-4xl mx-auto">
+            <Card className="card-romantic max-w-4xl mx-auto mx-4 sm:mx-auto">
               <motion.div
-                className="text-center"
+                className="text-center p-4 sm:p-6"
                 animate={{ scale: [1, 1.02, 1] }}
                 transition={{ duration: 4, repeat: Infinity }}
               >
-                <div className="text-6xl mb-6">💖</div>
-                <h2 className="text-3xl md:text-4xl font-bold text-romantic mb-6">
+                <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6">
+                  💖
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-romantic mb-4 sm:mb-6">
                   These promises come from my heart
                 </h2>
-                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
                   I know actions speak louder than words, and I'm ready to show
                   you every day how much you mean to me. Thank you for giving me
                   the chance to love you better. You are my world, my love, my
@@ -243,7 +249,7 @@ const Promise = () => {
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  <p className="text-2xl font-semibold text-romantic">
+                  <p className="text-xl sm:text-2xl font-semibold text-romantic">
                     I love you with all my heart ❤️
                   </p>
                 </motion.div>
