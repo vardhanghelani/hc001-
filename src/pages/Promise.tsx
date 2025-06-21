@@ -234,17 +234,14 @@ const Promise = () => {
                   These promises come from my heart
                 </h2>
                 <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
-                  I know actions speak louder than words, and I'm ready to show
-                  you every day how much you mean to me. Thank you for giving me
-                  the chance to love you better. You are my world, my love, my
-                  everything.
+                  I know actions speak louder than words, and you know m=hoow much i am particular with my words and bss am j rais jaan and hmesha pota upar work krto j rais so plzz apde bey amm j sathe rai and as a family end up thai bss i wish soo 
                 </p>
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   <p className="text-xl sm:text-2xl font-semibold text-romantic">
-                    I love you with all my heart ❤️
+                    I love you with all my heart Meenu ❤️
                   </p>
                 </motion.div>
               </motion.div>
